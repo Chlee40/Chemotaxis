@@ -1,13 +1,41 @@
- //declare bacteria variables here   
+ Mover [] bob; 
  void setup()   
  {     
- 	//initialize bacteria variables here   
+ 	size(512, 512);
+ 	bob = new Mover[100];
+ 	for (int i = 0; i < 100; i++) 
+ 	{
+ 		bob[i] = new Mover();
+ 	}
  }   
+ void mousePressed()
+ {
+ 	redraw();
+ }
+
  void draw()   
  {    
- 	//move and show the bacteria   
+ 	for (int i = 0; i < 100; i++)
+ 	{
+ 	bob[i].show();
+ 	bob[i].walk();
+ 	}  
  }  
- class Bacteria    
+ class Mover    
  {     
- 	//lots of java!   
+ 	int myX,myY;
+ 	Mover()
+ 	{
+ 		myX = (int) (Math.random()*500);
+ 		myY = (int) (Math.random()*500);
+ 	}
+ 	void show()
+ 	{
+ 		ellipse(myX, myY, 10, 10);
+ 	}
+ 	void walk()
+ 	{
+ 		//J
+ 	}
+
  }    
